@@ -1,19 +1,25 @@
 {
   "name": "caretrack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Telegram бот для відстеження прийому ліків",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "migrate": "npx dotenv sequelize-cli db:migrate",
+    "migrate:undo": "npx dotenv sequelize-cli db:migrate:undo",
+    "migrate:status": "npx dotenv sequelize-cli db:migrate:status"
   },
-  "keywords": [],
+  "keywords": ["telegram", "bot", "health", "medications"],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.2.3",
-    "node": "^25.1.0",
     "pg": "^8.16.3",
     "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0",
+    "sequelize-cli": "^6.6.3"
   }
 }
